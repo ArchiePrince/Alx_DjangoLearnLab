@@ -1,5 +1,5 @@
 # Detailed CRUD Operations in the Django Shell
-### Retrieve:
+["Book.objects.get"]
 > from bookshelf.models import Book
 
 Book.objects.all()
