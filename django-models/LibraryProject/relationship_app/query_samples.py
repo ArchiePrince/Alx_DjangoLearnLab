@@ -10,8 +10,8 @@ from relationship_app.models import Author, Book, Librarian, Library
 
 #Creating objects for the models
 
-author1 = Author(name='Efo Mawugbe')
-author1.save()
+author_name = Author(name='Efo Mawugbe')
+author_name.save()
 
 author2 = Author.objects.create(name='George Orwell')
 author3 = Author.objects.create(name='J.K. Rowling')
@@ -68,7 +68,10 @@ librarian3 = Librarian.objects.create(name='Aisha Mensah', library=library3)
 
 #Query all books by a specific author
 
-Book.objects.filter(author__id=2)
+# --> Book.objects.filter(author__id=2)
+objects = Author.objects.get(name=author_name)
+objects.filter(author=author)
+
 
 #List all books in a library
 books = Library.objects.get(name=library_name)
