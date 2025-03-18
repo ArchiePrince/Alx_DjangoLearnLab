@@ -49,11 +49,11 @@ new_book3.save()
 
 #Creating objects for ManyToMany table, Library
 
-library = Library.objects.create(name='Central City Library')
+library_name = Library.objects.create(name='Central City Library')
 library2 = Library.objects.create(name='British National Library')
 library3 = Library.objects.create(name='National Library of Ghana')
 
-library.book.add(new_book1, new_book2, new_book3)
+library_name.book.add(new_book1, new_book2, new_book3)
 library2.book.add(new_book2, new_book3)
 library3.book.add(new_book1, new_book3)
 
@@ -61,7 +61,7 @@ library3.book.add(new_book1, new_book3)
 
 #Creating objects for OneToOne table, Librarian
 
-librarian1 = Librarian.objects.create(name='John Smith', library=library)
+librarian1 = Librarian.objects.create(name='John Smith', library=library_name)
 librarian2 = Librarian.objects.create(name='Sarah Johnson', library=library2)
 librarian3 = Librarian.objects.create(name='Aisha Mensah', library=library3)
 
@@ -71,8 +71,8 @@ librarian3 = Librarian.objects.create(name='Aisha Mensah', library=library3)
 Book.objects.filter(author__id=2)
 
 #List all books in a library
-books = Library.objects.get(name=library)
+books = Library.objects.get(name=library_name)
 books.all()
 
 #Retrieve Librarian for a library
-Librarian.objects.get(library=library)
+Librarian.objects.get(library=library_name)
