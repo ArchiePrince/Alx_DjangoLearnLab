@@ -71,8 +71,8 @@ librarian3 = Librarian.objects.create(name='Aisha Mensah', library=library3)
 Book.objects.filter(author__id=2)
 
 #List all books in a library
-libraries = Library.objects.get(name=library1)
-libraries.book.all()
+books = Library.objects.get(name=library1)
+books.all()
 
 #Retrieve Librarian for a library
 Librarian.objects.get(library=library1)
