@@ -26,25 +26,25 @@ author = Author.objects.create(name='Efo Mawugbe')
 
 #Creating object for the ForeignKey table, Book
 
-new_book1 = Book.objects.create(title='In the chest of a woman')
+new_book1 = Book.objects.create(title='In the chest of a woman', author=author_name)
 
-chest_book = Book.objects.get(pk=1)
-auth_book = Author.objects.get(id=1)
-new_book1.author = auth_book
-new_book1.save()
+# chest_book = Book.objects.get(pk=1)
+# auth_book = Author.objects.get(id=1)
+# new_book1.author = auth_book
+# new_book1.save()
 
 
-new_book2 = Book.objects.create(title='1984')
+new_book2 = Book.objects.create(title='1984', author=author2)
 
-ge_book = Book.objects.get(pk=2)
-auth_book2 = Author.objects.get(id=2)
-new_book2.author = auth_book2
-new_book2.save()
+# ge_book = Book.objects.get(pk=2)
+# auth_book2 = Author.objects.get(id=2)
+# new_book2.author = auth_book2
+# new_book2.save()
 
-new_book3 = Book.objects.create(tite='Animal Farm')
-auth_book3 = Author.objects.get(id=2)
-new_book3.author = auth_book3
-new_book3.save()
+new_book3 = Book.objects.create(title='Animal Farm', author=author3)
+# auth_book3 = Author.objects.get(id=2)
+# new_book3.author = auth_book3
+# new_book3.save()
 
 
 #Creating objects for ManyToMany table, Library
